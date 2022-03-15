@@ -10,7 +10,7 @@ Assuming we would have the docker files written for the these components, and we
 
 docker build –t <image name> <path>
 
-and then push it to availble docker registry(private or public) or any jfrog artifactory.
+and then push it to availble docker registry(private or public) or any external artifactory storage managment like jfrog artifactory or nexus
 
 once the images are pushed to repository. we need to deploy it so that the underlying infra would be created.
 
@@ -18,7 +18,7 @@ For that i would choose eks service of aws, or aks for azure or gke for google c
 
 once the cluster will be created i will be creating below k8s resources/ojects.
 
-1. k8s secret : to enable the cluster to fectch the images from docker registry.
+1. k8s secret : to enable the cluster to fectch the images from external docker registry/
 
 2. k8s namespace: where our backend, fronend and databases will reside as a pod.
 
